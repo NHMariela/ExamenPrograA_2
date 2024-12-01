@@ -1,0 +1,58 @@
+﻿@model ExamenPrograA_2.Models.ViewModels.CProducto
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle del Producto</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.ProductoID)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.ProductoID)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Nombre)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Nombre)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Descripcion)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Descripcion)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Precio)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Precio)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Stock)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Stock)
+    </div>
+    <br />
+</div>
+<input type="button" value="Volver" class="btn btn-outline-success btn-block btn-lg" onclick="document.location.href='@Url.Content("~/Producto/index")'"/>

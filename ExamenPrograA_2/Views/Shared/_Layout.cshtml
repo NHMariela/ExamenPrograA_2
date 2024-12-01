@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi Finca</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Mi Finca</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Home")">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Agricultura", "Home")">Agricultura</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Historia", "Home")">Historia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Equipos", "Home")">Equipos</a>
+                        </li>
+                        <!-- Nuevas opciones del menú -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Inventario", "Home")">Inventario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Preguntas", "Home")">Preguntas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Administracion", "Home")">Administración</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" href="@Url.Action("Logout", "Home")">Cerrar Sesión</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Login", "Account")">Iniciar Sesión</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container my-5">
+        @RenderBody()
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; @DateTime.Now.Year - Mi Finca. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts generales -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <!-- Scripts específicos de cada vista -->
+    @RenderSection("scripts", required: false) 
+</body>
+</html>

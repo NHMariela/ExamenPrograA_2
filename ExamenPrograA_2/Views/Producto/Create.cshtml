@@ -1,0 +1,83 @@
+﻿@model ExamenPrograA_2.Models.ViewModels.CreateProducto
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Añadir producto</h2>
+<br />
+<br />
+@if (ViewBag.ValorMensaje == 1)
+{
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Mensaje</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success">@ViewBag.MensajeProceso</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if (ViewBag.ValorMensaje == 0)
+{
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Mensaje</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger">@ViewBag.MensajeProceso</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("create", "producto", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <input type="submit" class="btn btn-success btn-block btn-lg" value="Crear Producto" />
+            <br />
+            <input type="button" value="Volver" class="btn btn-outline-success btn-block btn-lg" onclick="document.location.href='@Url.Content("~/Producto/index")'" />
+        </div>
+        <div class="col-md-8">
+            @Html.LabelFor(u => u.Nombre)
+            @Html.TextBoxFor(u => u.Nombre, new { @class = "form-control" })
+            @Html.ValidationMessageFor(u => u.Nombre)
+            <br />
+            @Html.LabelFor(u => u.Descripcion)
+            @Html.TextBoxFor(u => u.Descripcion, new { @class = "form-control" })
+            @Html.ValidationMessageFor(u => u.Descripcion)
+            <br />
+            @Html.LabelFor(u => u.Precio)
+            @Html.TextBoxFor(u => u.Precio, new { @class = "form-control" })
+            @Html.ValidationMessageFor(u => u.Precio)
+            <br />
+            @Html.LabelFor(u => u.Stock)
+            @Html.TextBoxFor(u => u.Stock, new { @class = "form-control" })
+            @Html.ValidationMessageFor(u => u.Stock)
+            <br />
+        </div>
+    </div>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myModal').modal('show');
+        });
+    </script>
+}

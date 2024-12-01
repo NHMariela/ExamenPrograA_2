@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Productos</h2>
+<br />
+<br />
+
+<!-- Mostrar mensaje de proceso -->
+@if (ViewBag.ValorMensaje != null)
+{
+    <div class="alert @(ViewBag.ValorMensaje == 1 ? "alert-success" : "alert-danger")">
+        @ViewBag.MensajeProceso
+    </div>
+}
+@if (TempData["ValorMensaje"] != null)
+{
+    <div class="alert @(TempData["ValorMensaje"].ToString() == "1" ? "alert-success" : "alert-danger")">
+        @TempData["MensajeProceso"]
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <input type="button" class="btn btn-primary btn-block btn-lg" onclick="document.location.href ='@Url.Content("~/Producto/Create")'" value="Nuevo Producto" />
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ProductoID</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Consultar</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var fila in Model)
+                {
+                    <tr>
+                        <td>@fila.ProductoID</td>
+                        <td>@fila.Nombre</td>
+                        <td>@fila.Descripcion</td>
+                        <td>@fila.Precio</td>
+                        <td>@fila.Stock</td>
+                        <td><input type="button" value="Consultar" class="btn btn-success" onclick="document.location.href='@Url.Content("~/Producto/Details/" + fila.ProductoID)'" /></td>
+                        <td><input type="button" value="Editar" class="btn btn-primary" onclick="document.location.href='@Url.Content("~/Producto/Edit/" + fila.ProductoID)'" /></td>
+                        <td><input type="button" value="Eliminar" class="btn btn-danger" onclick="document.location.href='@Url.Content("~/Producto/Delete/" + fila.ProductoID)'" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
