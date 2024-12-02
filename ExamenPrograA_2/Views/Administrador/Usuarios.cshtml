@@ -1,0 +1,68 @@
+﻿
+@model IEnumerable<ExamenPrograA_2.Models.ViewModels.Usuario>
+@{
+    ViewBag.Title = "Administración de Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Usuarios</h2>
+<br />
+<br />
+@if (TempData["ValorMensaje"] != null)
+{
+    int valor = (int)TempData["ValorMensaje"];
+    string mensaje = (string)TempData["MensajeProceso"];
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Mensaje</h2>
+                </div>
+                <div class="modal-body">
+                    @if (valor == 1)
+                    {
+                        <div class="alert alert-success">@mensaje</div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger">@mensaje</div>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID de Usuario</th>
+            <th>Nombre Completo</th>
+            <th>Rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>@usuario.UsuarioID</td>
+                <td>@usuario.NombreCompleto</td>
+                <td>@usuario.Rol</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    // Mostrar el modal automáticamente si hay un mensaje
+    $(document).ready(function () {
+        if ($('#myModal').length) {
+            $('#myModal').modal('show');
+        }
+    });
+</script>
