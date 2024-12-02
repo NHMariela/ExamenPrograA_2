@@ -1,0 +1,58 @@
+﻿@model ExamenPrograA_2.Models.ViewModels.CMaquinaria
+@{
+    ViewBag.Title = "DetailsM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle de la Maquina</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.MaquinariaID)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.MaquinariaID)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Nombre)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Nombre)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Descripcion)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Descripcion)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Marca)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Marca)
+    </div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(u => u.Modelo)
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(u => u.Modelo)
+    </div>
+    <br />
+</div>
+<input type="button" value="Volver" class="btn btn-outline-success btn-block btn-lg" onclick="document.location.href='@Url.Content("~/Maquinaria/IndexM")'" />

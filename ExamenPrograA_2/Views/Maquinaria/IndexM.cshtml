@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Maquinaria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Maquinaria</h2>
+<br />
+<br />
+
+<!-- Mostrar mensaje de proceso -->
+@if (ViewBag.ValorMensaje != null)
+{
+    <div class="alert @(ViewBag.ValorMensaje == 1 ? "alert-success" : "alert-danger")">
+        @ViewBag.MensajeProceso
+    </div>
+}
+@if (TempData["ValorMensaje"] != null)
+{
+    <div class="alert @(TempData["ValorMensaje"].ToString() == "1" ? "alert-success" : "alert-danger")">
+        @TempData["MensajeProceso"]
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <input type="button" class="btn btn-primary btn-block btn-lg" onclick="document.location.href ='@Url.Content("~/Maquinaria/CreateM")'" value="Nueva Maquina" />
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>MaquinariaID</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Consultar</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var fila in Model)
+                {
+                    <tr>
+                        <td>@fila.MaquinariaID</td>
+                        <td>@fila.Nombre</td>
+                        <td>@fila.Descripcion</td>
+                        <td>@fila.Marca</td>
+                        <td>@fila.Modelo</td>
+                        <td><input type="button" value="Consultar" class="btn btn-success" onclick="document.location.href='@Url.Content("~/Maquinaria/DetailsM/" + fila.MaquinariaID)'" /></td>
+                        <td><input type="button" value="Editar" class="btn btn-primary" onclick="document.location.href='@Url.Content("~/Maquinaria/EditM/" + fila.MaquinariaID)'" /></td>
+                        <td><input type="button" value="Eliminar" class="btn btn-danger" onclick="document.location.href='@Url.Content("~/Maquinaria/DeleteM/" + fila.MaquinariaID)'" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
