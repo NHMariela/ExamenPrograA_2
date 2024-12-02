@@ -63,14 +63,21 @@
 
     <!-- Pie de página -->
     <footer class="bg-dark text-white text-center py-4">
+        <p>
+            <strong>Teléfono:</strong> 6285-6479  | 
+            <strong>Correo:</strong> MiFinca@gmail.com  | 
+            <strong>Horario:</strong> Viernes a Domingo de 8:00 AM a 6:00 PM
+        </p>
         <p>&copy; @DateTime.Now.Year - Mi Finca. Todos los derechos reservados.</p>
+        
     </footer>
+
 
     <!-- Scripts generales -->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
     <!-- Scripts específicos de cada vista -->
-    @RenderSection("scripts", required: false) 
+    @RenderSection("scripts", required: false)
 </body>
 </html>

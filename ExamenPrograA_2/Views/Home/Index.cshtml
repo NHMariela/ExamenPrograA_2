@@ -2,32 +2,138 @@
     ViewBag.Title = "Home Page";
 }
 
+<header class="text-center bg-dark-green text-white py-5">
+    <h1 class="display-4 font-weight-bold">Bienvenido a Mi Finca</h1>
+    <p class="lead subtitulo">Nos especializamos en cultivos orgánicos y sostenibles.</p>
+    <p class="lead subtitulo mb-0">Ofrecemos productos frescos y maquinaria avanzada para una agricultura eficiente.</p>
+</header>
+
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+    <div class="row mb-4">
+        <!-- Imágenes de cabecera -->
+        <div class="col-md-4 mb-3">
+            <img src="/Content/Imagenes/foto1.jpg" alt="Imagen 1" class="img-fluid rounded igual-tamano" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <img src="/Content/Imagenes/foto2.jpg" alt="Imagen 2" class="img-fluid rounded igual-tamano" />
+        </div>
+        <div class="col-md-4 mb-3">
+            <img src="/Content/Imagenes/foto3.jpg" alt="Imagen 3" class="img-fluid rounded igual-tamano" />
+        </div>
+    </div>
+    <!-- Sección sobre la historia-->
+    <section>
+        <h3 class="text-left">Un poco sobre mi historia</h3>
+        <p class="lead">
+            Nuestra finca fue fundada en 1990 con la visión de crear un espacio agrícola sostenible, donde la armonía entre la naturaleza y el hombre sea la base para una producción de alimentos saludables y respetuosa con el medio ambiente. Desde sus inicios, nos hemos especializado en cultivos orgánicos, utilizando técnicas agrícolas innovadoras que no solo mejoran la calidad de nuestros productos, sino que también preservan la biodiversidad del entorno.
+        </p>
+        <p class="lead">
+            A lo largo de los años, hemos implementado maquinaria avanzada que facilita el trabajo agrícola y asegura la eficiencia de cada proceso. Nuestra finca está comprometida con el bienestar de nuestros colaboradores y clientes, ofreciendo productos frescos, libres de químicos y con el sabor natural que solo la agricultura responsable puede ofrecer.
+        </p>
+        <p class="lead">
+            Con el paso del tiempo, hemos logrado expandirnos, manteniendo siempre la esencia de lo que nos motiva: la sostenibilidad, el respeto por la naturaleza, y la calidad de lo que cultivamos. ¡Gracias por ser parte de nuestra historia!
+        </p>
+    </section>
+    <!-- Sección sobre la importancia de la agricultura -->
+    <section>
+        <h3 class="text-left">La Importancia de la Agricultura</h3>
+        <p class="lead">
+            La agricultura es fundamental para el desarrollo de la humanidad, ya que provee los alimentos que consumimos a diario. Además de su papel en la alimentación, la agricultura también tiene un impacto directo en la economía, el empleo y el medio ambiente.
+        </p>
+        <p class="lead">
+            En todo el mundo, millones de personas dependen de la agricultura para su sustento y empleo. Desde los pequeños agricultores hasta los grandes productores, el sector agrícola es un pilar esencial para garantizar la seguridad alimentaria global. Sin una agricultura sostenible, no podríamos abastecer de alimentos a una población mundial creciente.
+        </p>
+        <p class="lead">
+            La agricultura también influye en la economía de muchos países, especialmente en las naciones en desarrollo, donde representa una gran parte de la producción nacional. Además, tiene un impacto directo en la preservación de los ecosistemas, ya que las prácticas agrícolas responsables pueden ayudar a conservar los recursos naturales y mitigar los efectos del cambio climático.
+        </p>
+        <p class="lead">
+            En resumen, la agricultura no solo alimenta al mundo, sino que también tiene un papel crucial en el equilibrio económico, social y ambiental de todos los países. Es esencial que apoyemos y promovamos prácticas agrícolas sostenibles para asegurar un futuro próspero para todos.
+        </p>
+    </section>
+    <!-- Sección de la galería de imágenes -->
+    <section class="container py-5">
+        <h3 class="text-center mb-4">Galería de Recuerdos</h3>
+        <div class="gallery-container d-flex overflow-auto">
+            <img src="~/Content/Imagenes/foto4.jpg" alt="Imagen 1" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto5.jpg" alt="Imagen 2" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto6.jpg" alt="Imagen 3" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto7.jpg" alt="Imagen 4" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto8.jpg" alt="Imagen 5" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto9.jpg" alt="Imagen 6" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto10.jpg" alt="Imagen 7" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto11.jpg" alt="Imagen 8" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto12.jpg" alt="Imagen 9" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto13.jpg" alt="Imagen 10" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+            <img src="~/Content/Imagenes/foto14.jpg" alt="Imagen11" class="igual-tamano mx-2" style="width: 600px; height: 400px;">
+        </div>
     </section>
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-    </div>
 </main>
+
+<style>
+    /* Estilo del encabezado */
+
+        header {
+            background: #2e4c2d; /* Verde más oscuro */
+            color: white; /* Texto en blanco */
+            padding: 10px 5px; /* Reduce el padding superior e inferior */
+            margin-bottom: 20px; /* Añade espacio entre el encabezado y las imágenes */
+        }
+
+        header h1 {
+            font-size: 2rem; /* Tamaño grande del título */
+            font-weight: 700; /* Negrita */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra para destacar el texto */
+        }
+
+        /* Estilo del subtítulo */
+        header .subtitulo {
+            font-size: 1.25rem; /* Tamaño intermedio para el subtítulo */
+            margin-top: 10px; /* Espaciado superior */
+            line-height: 1.4; /* Espaciado entre líneas */
+        }
+
+    /* Añadido un margen inferior cero para evitar espacio extra */
+    .lead.mb-0 {
+        margin-bottom: 0;
+    }
+
+    /* Asegura que todas las imágenes sean consistentes */
+    .igual-tamano {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .gallery-container img {
+        cursor: pointer; /* Cambiar el cursor para indicar que la imagen es interactiva */
+    }
+
+        /* Efecto hover para imágenes */
+        .igual-tamano:hover {
+            transform: scale(1.05); /* Amplía un poco la imagen */
+            transition: transform 0.3s ease; /* Transición suave */
+        }
+
+    /* Estilo para el texto de la sección */
+    section h3  {
+        margin-top: 40px;
+        font-size: 2rem;
+        color: #2e4c2d; /* Color verde */
+    }
+   
+    /* Estilo para los párrafos de la historia */
+    section p {
+        font-size: 1.2rem; /* Tamaño legible */
+        line-height: 1.8; /* Mayor espacio entre líneas para facilitar la lectura */
+        margin-bottom: 20px; /* Espaciado inferior entre los párrafos */
+    }
+
+    section p:first-child {
+        font-weight: 600; /* Hacer más destacada la introducción */
+    }
+
+</style>
+
+
